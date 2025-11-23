@@ -1,0 +1,9 @@
+{
+  "name": "Dark",
+  "background": "#1E1E1E",
+  "foreground": "#FFFFFF",
+  "accent": "#0078D4",
+  "border": "#3F3F3F",
+  "button": "#2D2D2D",
+  "buttonHover": "#3E3E3E"
+}

@@ -1,0 +1,8 @@
+//
+// Created by suehyun on 11/22/25.
+//
+
+#ifndef HTS_VER6_IMARKETDATASERVICE_H
+#define HTS_VER6_IMARKETDATASERVICE_H
+
+#endif //HTS_VER6_IMARKETDATASERVICE_H

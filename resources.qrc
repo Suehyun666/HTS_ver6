@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/icons/app_icon.png</file>
+        <file>resources/icons/tray_icon.png</file>
+        <file>resources/sounds/notification.wav</file>
+        <file>resources/sounds/info.wav</file>
+        <file>resources/sounds/alert.wav</file>
+        <file>resources/themes/dark.json</file>
+        <file>resources/themes/light.json</file>
+        <file>resources/i18n/common_ko_KR.qm</file>
+        <file>resources/i18n/common_en_US.qm</file>
+        <file>resources/i18n/auth_ko_KR.qm</file>
+        <file>resources/i18n/auth_en_US.qm</file>
+        <file>resources/i18n/account_ko_KR.qm</file>
+        <file>resources/i18n/account_en_US.qm</file>
+        <file>resources/i18n/order_ko_KR.qm</file>
+        <file>resources/i18n/order_en_US.qm</file>
+        <file>resources/i18n/market_ko_KR.qm</file>
+        <file>resources/i18n/market_en_US.qm</file>
+    </qresource>
+</RCC>

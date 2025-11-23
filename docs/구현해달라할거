@@ -1,0 +1,90 @@
+네트워크 테스트 
+응답 보여주는 콘솔 메뉴
+
+● 종합 분석 결과:
+
+  ---
+  5. QStateMachine 적용
+
+  적용할 곳:
+
+  1. 인증/연결 상태 관리 (가장 중요)
+    - Disconnected → Connecting → Connected → Reconnecting → SessionExpired
+    - 로그인 → 로그아웃 → 재로그인 흐름
+  2. 주문 상태 관리
+    - Draft → Validating → Submitting → Submitted →
+  Filled/Rejected/Cancelled
+  3. WebSocket/gRPC 스트리밍 연결
+    - Idle → Connecting → Streaming → Reconnecting → Failed
+
+  장점:
+
+  - 명확한 상태 전이: 복잡한 if/else 분기 제거
+  - UI 일관성: 각 상태별로 버튼 활성화/비활성화 자동 관리
+  - 디버깅 용이: 현재 상태 추적 가능
+  - 재연결 로직 간소화: 상태 기반 자동 재시도
+
+  단점:
+
+  - 초기 설정 복잡: 상태/전이 정의에 코드량 증가
+  - 간단한 로직에는 오버킬: 2-3개 상태만 있으면 불필요
+  - 학습 곡선: 팀원이 QStateMachine 이해 필요
+
+  ---
+  6. Model/View Framework 적용
+
+  반드시 적용해야 하는 곳:
+
+  1. 호가창 (OrderBook) - 필수
+    - 초당 수십~수백 건 업데이트
+    - QTableView + QAbstractTableModel
+    - 성능 차이: 10배 이상
+  2. 체결창 (TradeHistory) - 필수
+    - 실시간 체결 내역
+    - 수천 행 표시
+  3. 종목검색 (TickerSearch) - 권장
+    - 필터링/정렬 필요
+    - QSortFilterProxyModel 활용
+  4. 계좌 잔고 (AccountBalance) - 권장
+    - 보유 종목 리스트
+    - 정렬/필터 기능
+  5. 주문 내역 (OrderHistory) - 권장
+    - 과거 주문 조회
+    - 페이징 필요
+
+  적용하지 않아도 되는 곳:
+
+  - 단순 폼 입력 (로그인 화면)
+  - 정적 설정 UI
+  - 단일 값 표시 (현재가, 계좌 총액)
+
+  모두 적용해야 하는가?
+
+  아니다. 하지만 실시간 데이터 갱신이 빈번한 테이블 뷰는 무조건 적용해야
+  한다.
+
+  ---
+
+  구조:
+
+  MarketDataService (gRPC stream)
+      ↓
+  TradeNotificationManager
+      ↓
+  ├─ QSystemTrayIcon (트레이 알림)
+  ├─ NotificationWidget (화면 우측 하단 슬라이드)
+  └─ QSoundEffect (알림음)
+
+  구현 위치:
+
+  - src/ui/notification/TradeNotificationWidget.h/cpp
+  - src/service/notification/NotificationService.h/cpp
+
+  기능:
+
+  - 체결/정정/취소 알림
+  - 가격 도달 알림
+  - 잔고 부족 경고
+  - 알림 히스토리 (최근 10개)
+
+

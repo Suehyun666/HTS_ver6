@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="en_US">
+<context>
+    <name>Common</name>
+    <message>
+        <source>OK</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Network Error</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Connection Failed</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Processing...</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>MenuBarManager</name>
+    <message>
+        <source>Account</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Account View</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Market</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Chart</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Order</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Calculator</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Calendar</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Clock</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Close All Windows</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Theme</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Light</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Korean</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Language changed. Restart application to apply.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Test Trade Notification</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Test Info Notification</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Test Warning Notification</source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>HTS Trading System</source>
+        <translation></translation>
+    </message>
+</context>
+</TS>
