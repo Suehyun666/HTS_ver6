@@ -173,15 +173,16 @@ source_group("Plot" FILES ${PLOT_SOURCES})
 source_group("Translation Files" FILES ${TS_FILES})
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+
     qt_add_executable(HTS_ver6
             MANUAL_FINALIZATION
             ${PROJECT_SOURCES}
             ${UI_FILES}
             ${TS_FILES}
             resources.qrc
+            ${QM_FILES}
         )
-
-        qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 else()
     if(ANDROID)
         add_library(HTS_ver6 SHARED
@@ -201,6 +202,12 @@ else()
 endif()
 
 target_link_libraries(HTS_ver6 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Qml Qt${QT_VERSION_MAJOR}::Multimedia Qt${QT_VERSION_MAJOR}::PrintSupport)
+
+# Windows-specific settings
+if(WIN32)
+    # Ensure proper Unicode support on Windows
+    add_definitions(-DUNICODE -D_UNICODE)
+endif()
 
 if(${QT_VERSION} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.HTS_ver6)

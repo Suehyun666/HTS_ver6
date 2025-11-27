@@ -32,10 +32,11 @@
     {
       "name": "windows-debug",
       "displayName": "Windows Debug",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
       "binaryDir": "${sourceDir}/build/windows-debug",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_PREFIX_PATH": "$env{QT_DIR}"
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.7.3/msvc2022_64"
       },
       "condition": {
         "type": "equals",
@@ -46,10 +47,11 @@
     {
       "name": "windows-release",
       "displayName": "Windows Release",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
       "binaryDir": "${sourceDir}/build/windows-release",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_PREFIX_PATH": "$env{QT_DIR}"
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.7.3/msvc2022_64"
       },
       "condition": {
         "type": "equals",

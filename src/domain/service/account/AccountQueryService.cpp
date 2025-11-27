@@ -1,6 +1,6 @@
 #include "AccountQueryService.h"
-#include "../../infrastructure/session/SessionManager.h"
 #include <QThread>
+#include "infrastructure/session/SessionManager.h"
 
 Result<AccountSnapshot> AccountQueryService::getAccountSnapshot() {
     if (!SessionManager::instance().isLoggedIn()) {

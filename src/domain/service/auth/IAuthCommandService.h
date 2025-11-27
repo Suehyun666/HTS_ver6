@@ -1,8 +1,7 @@
 #pragma once
-#include "../../core/model/Result.h"
 #include "../../model/Session.h"
+#include "core/model/Result.h"
 #include <QString>
-
 class IAuthCommandService {
 public:
     virtual ~IAuthCommandService() = default;

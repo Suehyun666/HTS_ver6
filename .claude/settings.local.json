@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(C:\\Qt\\6.7.3\\msvc2022_64\\bin\\lrelease.exe:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

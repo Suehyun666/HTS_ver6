@@ -2,176 +2,674 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
-    <name>Common</name>
+    <name>AccountMenu</name>
     <message>
-        <source>OK</source>
-        <translation>확인</translation>
+        <location filename="../../src/core/menu/AccountMenu.cpp" line="11"/>
+        <source>Account</source>
+        <translation type="unfinished">계좌</translation>
     </message>
     <message>
-        <source>Cancel</source>
-        <translation>취소</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>예</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>아니오</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>닫기</translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation>적용</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>저장</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>삭제</translation>
-    </message>
-    <message>
-        <source>Confirm</source>
-        <translation>확인</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>오류</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>경고</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>정보</translation>
-    </message>
-    <message>
-        <source>Network Error</source>
-        <translation>네트워크 오류</translation>
-    </message>
-    <message>
-        <source>Connection Failed</source>
-        <translation>연결 실패</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>연결 중...</translation>
-    </message>
-    <message>
-        <source>Processing...</source>
-        <translation>처리 중...</translation>
+        <location filename="../../src/core/menu/AccountMenu.cpp" line="13"/>
+        <source>Account View</source>
+        <translation type="unfinished">계좌 조회</translation>
     </message>
 </context>
 <context>
-    <name>MenuBarManager</name>
+    <name>AccountView</name>
     <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="29"/>
+        <source>Account Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="46"/>
+        <source>Account Number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="48"/>
+        <source>Total Assets:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="50"/>
+        <source>Cash Balance:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="53"/>
+        <source>Stock Valuation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="55"/>
+        <source>Profit/Loss:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="57"/>
+        <source>Profit Rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="62"/>
+        <source>Holdings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="68"/>
+        <source>Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="69"/>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="70"/>
+        <source>Avg Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="71"/>
+        <source>Current Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="72"/>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="73"/>
+        <source>P/L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="74"/>
+        <source>P/L %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.h" line="15"/>
         <source>Account</source>
-        <translation>계좌</translation>
+        <translation type="unfinished">계좌</translation>
     </message>
+</context>
+<context>
+    <name>CalculatorWidget</name>
     <message>
-        <source>Account View</source>
-        <translation>계좌 조회</translation>
-    </message>
-    <message>
-        <source>Market</source>
-        <translation>시세</translation>
-    </message>
-    <message>
-        <source>Chart</source>
-        <translation>차트</translation>
-    </message>
-    <message>
-        <source>Order</source>
-        <translation>주문</translation>
-    </message>
-    <message>
-        <source>Tools</source>
-        <translation>도구</translation>
-    </message>
-    <message>
+        <location filename="../../src/ui/tools/calculator/CalculatorWidget.h" line="14"/>
         <source>Calculator</source>
-        <translation>계산기</translation>
+        <translation type="unfinished">계산기</translation>
     </message>
+</context>
+<context>
+    <name>CalendarWidget</name>
     <message>
+        <location filename="../../src/ui/tools/calendar/CalendarWidget.h" line="14"/>
         <source>Calendar</source>
-        <translation>달력</translation>
+        <translation type="unfinished">달력</translation>
+    </message>
+</context>
+<context>
+    <name>ChartWidget</name>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="25"/>
+        <source>Symbol:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="28"/>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.h" line="19"/>
+        <source>Chart</source>
+        <translation type="unfinished">차트</translation>
+    </message>
+</context>
+<context>
+    <name>ClockWidget</name>
+    <message>
+        <location filename="../../src/ui/tools/clock/ClockWidget.h" line="14"/>
         <source>Clock</source>
-        <translation>시계</translation>
+        <translation type="unfinished">시계</translation>
+    </message>
+</context>
+<context>
+    <name>Common</name>
+    <message>
+        <source>OK</source>
+        <translation type="vanished">확인</translation>
     </message>
     <message>
-        <source>Note</source>
-        <translation>메모</translation>
+        <source>Cancel</source>
+        <translation type="vanished">취소</translation>
     </message>
     <message>
-        <source>Close All Windows</source>
-        <translation>모든 창 닫기</translation>
+        <source>Yes</source>
+        <translation type="vanished">예</translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation>설정</translation>
+        <source>No</source>
+        <translation type="vanished">아니오</translation>
     </message>
     <message>
-        <source>Theme</source>
-        <translation>테마</translation>
+        <source>Close</source>
+        <translation type="vanished">닫기</translation>
     </message>
     <message>
-        <source>Light</source>
-        <translation>라이트</translation>
+        <source>Apply</source>
+        <translation type="vanished">적용</translation>
     </message>
     <message>
-        <source>Dark</source>
-        <translation>다크</translation>
+        <source>Save</source>
+        <translation type="vanished">저장</translation>
     </message>
     <message>
-        <source>System</source>
-        <translation>시스템</translation>
+        <source>Delete</source>
+        <translation type="vanished">삭제</translation>
     </message>
     <message>
-        <source>Language</source>
-        <translation>언어</translation>
+        <source>Confirm</source>
+        <translation type="vanished">확인</translation>
     </message>
     <message>
-        <source>Korean</source>
-        <translation>한국어</translation>
+        <source>Error</source>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
-        <source>English</source>
-        <translation>English</translation>
+        <source>Warning</source>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
-        <source>Language changed. Restart application to apply.</source>
-        <translation>언어가 변경되었습니다. 적용하려면 앱을 재시작하세요.</translation>
+        <source>Information</source>
+        <translation type="vanished">정보</translation>
     </message>
     <message>
-        <source>Test</source>
-        <translation>테스트</translation>
+        <source>Network Error</source>
+        <translation type="vanished">네트워크 오류</translation>
     </message>
     <message>
-        <source>Test Trade Notification</source>
-        <translation>거래 알림 테스트</translation>
+        <source>Connection Failed</source>
+        <translation type="vanished">연결 실패</translation>
     </message>
     <message>
-        <source>Test Info Notification</source>
-        <translation>정보 알림 테스트</translation>
+        <source>Connecting...</source>
+        <translation type="vanished">연결 중...</translation>
     </message>
     <message>
-        <source>Test Warning Notification</source>
-        <translation>경고 알림 테스트</translation>
+        <source>Processing...</source>
+        <translation type="vanished">처리 중...</translation>
+    </message>
+</context>
+<context>
+    <name>DigitalClock</name>
+    <message>
+        <location filename="../../src/ui/tools/clock/DigitalClock.cpp" line="18"/>
+        <source>Digital Clock</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LoginWindow</name>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="14"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="104"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="104"/>
+        <source>HTS Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="47"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="105"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="105"/>
+        <source>User ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="54"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="106"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="106"/>
+        <source>Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="64"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="107"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="107"/>
+        <source>Enter your password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="71"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="108"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="108"/>
+        <source>Enter your user ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="80"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="109"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="109"/>
+        <source>QLabel { color: red; }</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="93"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="111"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="111"/>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/LoginWindow.cpp" line="51"/>
+        <source>Logging in...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../../src/ui/window/mainwindow.ui" line="20"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_mainwindow.h" line="52"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_mainwindow.h" line="52"/>
         <source>HTS Trading System</source>
         <translation>HTS 거래 시스템</translation>
+    </message>
+</context>
+<context>
+    <name>MarketMenu</name>
+    <message>
+        <location filename="../../src/core/menu/MarketMenu.cpp" line="11"/>
+        <source>Market</source>
+        <translation type="unfinished">시세</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/MarketMenu.cpp" line="13"/>
+        <source>Chart</source>
+        <translation type="unfinished">차트</translation>
+    </message>
+</context>
+<context>
+    <name>MenuBarManager</name>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="34"/>
+        <source>Account</source>
+        <translation>계좌</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="36"/>
+        <source>Account View</source>
+        <translation>계좌 조회</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="44"/>
+        <source>Market</source>
+        <translation>시세</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="46"/>
+        <source>Chart</source>
+        <translation>차트</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="54"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="56"/>
+        <source>Order</source>
+        <translation>주문</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="64"/>
+        <source>Tools</source>
+        <translation>도구</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="66"/>
+        <source>Calculator</source>
+        <translation>계산기</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="72"/>
+        <source>Calendar</source>
+        <translation>달력</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="78"/>
+        <source>Clock</source>
+        <translation>시계</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="84"/>
+        <source>Note</source>
+        <translation>메모</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="92"/>
+        <source>Close All Windows</source>
+        <translation>모든 창 닫기</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="99"/>
+        <source>Settings</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="101"/>
+        <source>Theme</source>
+        <translation>테마</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="102"/>
+        <source>Light</source>
+        <translation>라이트</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="103"/>
+        <source>Dark</source>
+        <translation>다크</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="104"/>
+        <source>System</source>
+        <translation>시스템</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="120"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="127"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="134"/>
+        <source>Language</source>
+        <translation>언어</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="121"/>
+        <source>Korean</source>
+        <translation>한국어</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="122"/>
+        <source>English</source>
+        <translation>English</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="128"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="135"/>
+        <source>Language changed. Restart application to apply.</source>
+        <translation>언어가 변경되었습니다. 적용하려면 앱을 재시작하세요.</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="140"/>
+        <source>Test</source>
+        <translation>테스트</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="142"/>
+        <source>Test Trade Notification</source>
+        <translation>거래 알림 테스트</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="150"/>
+        <source>Test Info Notification</source>
+        <translation>정보 알림 테스트</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="158"/>
+        <source>Test Warning Notification</source>
+        <translation>경고 알림 테스트</translation>
+    </message>
+</context>
+<context>
+    <name>NoteWidget</name>
+    <message>
+        <location filename="../../src/ui/tools/note/NoteWidget.h" line="13"/>
+        <source>Note</source>
+        <translation type="unfinished">메모</translation>
+    </message>
+</context>
+<context>
+    <name>NotificationManager</name>
+    <message>
+        <location filename="../../src/core/notification/NotificationManager.cpp" line="27"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/notification/NotificationManager.cpp" line="28"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OrderMenu</name>
+    <message>
+        <location filename="../../src/core/menu/OrderMenu.cpp" line="11"/>
+        <location filename="../../src/core/menu/OrderMenu.cpp" line="13"/>
+        <source>Order</source>
+        <translation type="unfinished">주문</translation>
+    </message>
+</context>
+<context>
+    <name>OrderWidget</name>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="35"/>
+        <source>New Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="50"/>
+        <source>Market Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="51"/>
+        <source>Limit Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="54"/>
+        <source>Symbol:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="55"/>
+        <source>Order Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="56"/>
+        <source>Price:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="57"/>
+        <source>Quantity:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="60"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="95"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="125"/>
+        <source>Buy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="61"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="95"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="143"/>
+        <source>Sell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="71"/>
+        <source>Open Orders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="81"/>
+        <source>Cancel Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="94"/>
+        <source>Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="94"/>
+        <source>Market</source>
+        <translation type="unfinished">시세</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="128"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="146"/>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
+        <source>Filled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
+        <source>Partial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="130"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="148"/>
+        <source>Order Placed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="130"/>
+        <source>Buy order for %1 shares of %2 at $%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="148"/>
+        <source>Sell order for %1 shares of %2 at $%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="154"/>
+        <source>No Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="154"/>
+        <source>Please select an order to cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="161"/>
+        <source>Order Cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="161"/>
+        <source>Order has been cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.h" line="18"/>
+        <source>Order</source>
+        <translation type="unfinished">주문</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="145"/>
+        <source>Trade Executed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="146"/>
+        <source>Buy 100 shares of AAPL at $150.00</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="153"/>
+        <source>Market Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="154"/>
+        <source>KOSPI index reached 2,500 points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="161"/>
+        <source>Price Alert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="162"/>
+        <source>Samsung Electronics dropped below 70,000 KRW</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ToolMenu</name>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="14"/>
+        <source>Tools</source>
+        <translation type="unfinished">도구</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="16"/>
+        <source>Calculator</source>
+        <translation type="unfinished">계산기</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="21"/>
+        <source>Calendar</source>
+        <translation type="unfinished">달력</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="26"/>
+        <source>Clock</source>
+        <translation type="unfinished">시계</translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="31"/>
+        <source>Note</source>
+        <translation type="unfinished">메모</translation>
     </message>
 </context>
 </TS>

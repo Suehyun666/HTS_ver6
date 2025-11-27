@@ -21,18 +21,18 @@ Qt6 기반 크로스 플랫폼 HTS 애플리케이션
 
 #### 1. Qt 설치
 1. [Qt 공식 사이트](https://www.qt.io/download)에서 Qt Online Installer 다운로드
-2. Qt 6.7.3 (MSVC 2019 또는 MinGW) 설치
+2. Qt 6.7.3 (MSVC 2022) 설치
 3. Qt Creator 설치 (선택사항, 권장)
 
 #### 2. 환경 변수 설정
 ```powershell
 # Qt 경로를 PATH에 추가 (예시)
-$env:PATH += ";C:\Qt\6.7.3\msvc2019_64\bin"
-$env:Qt6_DIR = "C:\Qt\6.7.3\msvc2019_64"
+$env:PATH += ";C:\Qt\6.7.3\msvc2022_64\bin"
+$env:Qt6_DIR = "C:\Qt\6.7.3\msvc2022_64"
 ```
 
 영구 설정:
-- 시스템 환경 변수에 `Qt6_DIR` 추가: `C:\Qt\6.7.3\msvc2019_64`
+- 시스템 환경 변수에 `Qt6_DIR` 추가: `C:\Qt\6.7.3\msvc2022_64`
 - PATH에 `%Qt6_DIR%\bin` 추가
 
 #### 3. CMake & 컴파일러
@@ -91,7 +91,7 @@ source ~/.bashrc
 #### Qt Creator 사용 (권장)
 1. Qt Creator 실행
 2. `File > Open File or Project` → `CMakeLists.txt` 선택
-3. Kit 선택 (Desktop Qt 6.7.3 MSVC2019 64bit)
+3. Kit 선택 (Desktop Qt 6.7.3 MSVC2022 64bit)
 4. Configure 완료 후 Build 버튼 클릭
 
 #### 명령줄 (PowerShell)
@@ -160,7 +160,7 @@ Copy-Item build\windows-release\Release\HTS_ver6.exe deploy\
 
 # Qt 의존성 자동 수집
 cd deploy
-& "C:\Qt\6.7.3\msvc2019_64\bin\windeployqt.exe" HTS_ver6.exe
+& "C:\Qt\6.7.3\msvc2022_64\bin\windeployqt.exe" HTS_ver6.exe
 
 # 결과: deploy 폴더에 실행 가능한 독립 패키지 생성
 ```
@@ -287,7 +287,7 @@ cmake --preset <platform>-debug
 ```bash
 # Qt6_DIR 환경변수 명시적 설정
 # Windows
-set Qt6_DIR=C:\Qt\6.7.3\msvc2019_64
+set Qt6_DIR=C:\Qt\6.7.3\msvc2022_64
 
 # Linux
 export Qt6_DIR=$HOME/Qt/6.7.3/gcc_64

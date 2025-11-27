@@ -2,70 +2,674 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
+    <name>AccountMenu</name>
+    <message>
+        <location filename="../../src/core/menu/AccountMenu.cpp" line="11"/>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/AccountMenu.cpp" line="13"/>
+        <source>Account View</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AccountView</name>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="29"/>
+        <source>Account Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="46"/>
+        <source>Account Number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="48"/>
+        <source>Total Assets:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="50"/>
+        <source>Cash Balance:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="53"/>
+        <source>Stock Valuation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="55"/>
+        <source>Profit/Loss:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="57"/>
+        <source>Profit Rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="62"/>
+        <source>Holdings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="68"/>
+        <source>Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="69"/>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="70"/>
+        <source>Avg Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="71"/>
+        <source>Current Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="72"/>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="73"/>
+        <source>P/L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="74"/>
+        <source>P/L %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.h" line="15"/>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CalculatorWidget</name>
+    <message>
+        <location filename="../../src/ui/tools/calculator/CalculatorWidget.h" line="14"/>
+        <source>Calculator</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CalendarWidget</name>
+    <message>
+        <location filename="../../src/ui/tools/calendar/CalendarWidget.h" line="14"/>
+        <source>Calendar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChartWidget</name>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="25"/>
+        <source>Symbol:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="28"/>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.h" line="19"/>
+        <source>Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ClockWidget</name>
+    <message>
+        <location filename="../../src/ui/tools/clock/ClockWidget.h" line="14"/>
+        <source>Clock</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DigitalClock</name>
+    <message>
+        <location filename="../../src/ui/tools/clock/DigitalClock.cpp" line="18"/>
+        <source>Digital Clock</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LoginView</name>
     <message>
         <source>Login</source>
-        <translation>로그인</translation>
+        <translation type="vanished">로그인</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation>로그아웃</translation>
+        <translation type="vanished">로그아웃</translation>
     </message>
     <message>
         <source>User ID:</source>
-        <translation>사용자 ID:</translation>
+        <translation type="vanished">사용자 ID:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>비밀번호:</translation>
+        <translation type="vanished">비밀번호:</translation>
     </message>
     <message>
         <source>Remember me</source>
-        <translation>로그인 상태 유지</translation>
+        <translation type="vanished">로그인 상태 유지</translation>
     </message>
     <message>
         <source>Forgot password?</source>
-        <translation>비밀번호를 잊으셨나요?</translation>
+        <translation type="vanished">비밀번호를 잊으셨나요?</translation>
     </message>
     <message>
         <source>Logging in...</source>
-        <translation>로그인 중...</translation>
+        <translation type="vanished">로그인 중...</translation>
     </message>
     <message>
         <source>Login successful</source>
-        <translation>로그인 성공</translation>
+        <translation type="vanished">로그인 성공</translation>
     </message>
     <message>
         <source>Login failed</source>
-        <translation>로그인 실패</translation>
+        <translation type="vanished">로그인 실패</translation>
     </message>
     <message>
         <source>Invalid user ID or password</source>
-        <translation>잘못된 사용자 ID 또는 비밀번호입니다</translation>
+        <translation type="vanished">잘못된 사용자 ID 또는 비밀번호입니다</translation>
     </message>
     <message>
         <source>User ID cannot be empty</source>
-        <translation>사용자 ID를 입력하세요</translation>
+        <translation type="vanished">사용자 ID를 입력하세요</translation>
     </message>
     <message>
         <source>Password cannot be empty</source>
-        <translation>비밀번호를 입력하세요</translation>
+        <translation type="vanished">비밀번호를 입력하세요</translation>
     </message>
     <message>
         <source>User ID must be at least %1 characters</source>
-        <translation>사용자 ID는 최소 %1자 이상이어야 합니다</translation>
+        <translation type="vanished">사용자 ID는 최소 %1자 이상이어야 합니다</translation>
     </message>
     <message>
         <source>Password must be at least %1 characters</source>
-        <translation>비밀번호는 최소 %1자 이상이어야 합니다</translation>
+        <translation type="vanished">비밀번호는 최소 %1자 이상이어야 합니다</translation>
     </message>
     <message>
         <source>Session has expired. Please login again</source>
-        <translation>세션이 만료되었습니다. 다시 로그인해주세요</translation>
+        <translation type="vanished">세션이 만료되었습니다. 다시 로그인해주세요</translation>
     </message>
     <message>
         <source>Authentication failed</source>
-        <translation>인증 실패</translation>
+        <translation type="vanished">인증 실패</translation>
+    </message>
+</context>
+<context>
+    <name>LoginWindow</name>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="14"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="104"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="104"/>
+        <source>HTS Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="47"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="105"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="105"/>
+        <source>User ID:</source>
+        <translation type="unfinished">사용자 ID:</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="54"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="106"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="106"/>
+        <source>Password:</source>
+        <translation type="unfinished">비밀번호:</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="64"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="107"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="107"/>
+        <source>Enter your password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="71"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="108"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="108"/>
+        <source>Enter your user ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="80"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="109"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="109"/>
+        <source>QLabel { color: red; }</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/loginwindow.ui" line="93"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="111"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="111"/>
+        <source>Login</source>
+        <translation type="unfinished">로그인</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/auth/LoginWindow.cpp" line="51"/>
+        <source>Logging in...</source>
+        <translation type="unfinished">로그인 중...</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../../src/ui/window/mainwindow.ui" line="20"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_mainwindow.h" line="52"/>
+        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_mainwindow.h" line="52"/>
+        <source>HTS Trading System</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MarketMenu</name>
+    <message>
+        <location filename="../../src/core/menu/MarketMenu.cpp" line="11"/>
+        <source>Market</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/MarketMenu.cpp" line="13"/>
+        <source>Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MenuBarManager</name>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="34"/>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="36"/>
+        <source>Account View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="44"/>
+        <source>Market</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="46"/>
+        <source>Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="54"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="56"/>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="64"/>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="66"/>
+        <source>Calculator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="72"/>
+        <source>Calendar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="78"/>
+        <source>Clock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="84"/>
+        <source>Note</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="92"/>
+        <source>Close All Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="99"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="101"/>
+        <source>Theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="102"/>
+        <source>Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="103"/>
+        <source>Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="104"/>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="120"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="127"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="134"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="121"/>
+        <source>Korean</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="122"/>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="128"/>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="135"/>
+        <source>Language changed. Restart application to apply.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="140"/>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="142"/>
+        <source>Test Trade Notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="150"/>
+        <source>Test Info Notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="158"/>
+        <source>Test Warning Notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NoteWidget</name>
+    <message>
+        <location filename="../../src/ui/tools/note/NoteWidget.h" line="13"/>
+        <source>Note</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NotificationManager</name>
+    <message>
+        <location filename="../../src/core/notification/NotificationManager.cpp" line="27"/>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/notification/NotificationManager.cpp" line="28"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OrderMenu</name>
+    <message>
+        <location filename="../../src/core/menu/OrderMenu.cpp" line="11"/>
+        <location filename="../../src/core/menu/OrderMenu.cpp" line="13"/>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OrderWidget</name>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="35"/>
+        <source>New Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="50"/>
+        <source>Market Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="51"/>
+        <source>Limit Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="54"/>
+        <source>Symbol:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="55"/>
+        <source>Order Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="56"/>
+        <source>Price:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="57"/>
+        <source>Quantity:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="60"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="95"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="125"/>
+        <source>Buy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="61"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="95"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="143"/>
+        <source>Sell</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="71"/>
+        <source>Open Orders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="81"/>
+        <source>Cancel Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="94"/>
+        <source>Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="94"/>
+        <source>Market</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="128"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="146"/>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
+        <source>Filled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
+        <source>Partial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="130"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="148"/>
+        <source>Order Placed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="130"/>
+        <source>Buy order for %1 shares of %2 at $%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="148"/>
+        <source>Sell order for %1 shares of %2 at $%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="154"/>
+        <source>No Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="154"/>
+        <source>Please select an order to cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="161"/>
+        <source>Order Cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="161"/>
+        <source>Order has been cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.h" line="18"/>
+        <source>Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="145"/>
+        <source>Trade Executed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="146"/>
+        <source>Buy 100 shares of AAPL at $150.00</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="153"/>
+        <source>Market Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="154"/>
+        <source>KOSPI index reached 2,500 points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="161"/>
+        <source>Price Alert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/window/MenuBarManager.cpp" line="162"/>
+        <source>Samsung Electronics dropped below 70,000 KRW</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ToolMenu</name>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="14"/>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="16"/>
+        <source>Calculator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="21"/>
+        <source>Calendar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="26"/>
+        <source>Clock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/core/menu/ToolMenu.cpp" line="31"/>
+        <source>Note</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

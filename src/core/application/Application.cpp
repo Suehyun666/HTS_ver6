@@ -5,7 +5,7 @@
 #include "../../infrastructure/network/NetworkExecutor.h"
 #include "../../infrastructure/session/SessionManager.h"
 #include "../../infrastructure/config/translate/TranslationManager.h"
-#include "../../service/auth/AuthCommandService.h"
+#include "../../domain/service/auth/AuthCommandService.h"
 #include "../../viewmodel/auth/LoginViewModel.h"
 #include "../../ui/window/MainWindow.h"
 #include "../../ui/auth/LoginWindow.h"

@@ -1,6 +1,6 @@
 #pragma once
-#include "../../core/model/Result.h"
 #include "../../model/AccountSnapshot.h"
+#include "core/model/Result.h"
 
 class IAccountQueryService {
 public:

@@ -1,6 +1,6 @@
 #pragma once
 #include <QObject>
-#include "../../service/auth/IAuthCommandService.h"
+#include "../../domain/service/auth/IAuthCommandService.h"
 #include <memory>
 
 class LoginViewModel : public QObject {
