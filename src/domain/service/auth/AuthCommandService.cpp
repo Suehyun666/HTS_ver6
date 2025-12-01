@@ -1,31 +1,115 @@
 #include "AuthCommandService.h"
-#include <QThread>
+#include "../../../infrastructure/network/GrpcNetworkManager.h"
+#include "../../../infrastructure/session/SessionManager.h"
+#include <QDebug>
+#include <auth_api.qpb.h>
 
-Result<Session> AuthCommandService::login(const QString& userId, const QString& password) {
-    // TODO: 실제 gRPC 호출
-    // 지금은 Mock
+void AuthCommandService::loginAsync(
+    const QString& userId,
+    const QString& password,
+    QObject* context,
+    std::function<void(Result<Session>)> callback
+) {
     if (userId.isEmpty() || password.isEmpty()) {
-        return Result<Session>::failure(
+        callback(Result<Session>::failure(
             ErrorCode::InvalidInput,
             "User ID and password cannot be empty"
-        );
+        ));
+        return;
     }
 
-    // 시뮬레이션: 네트워크 딜레이
-    QThread::msleep(100);
+    auth::LoginRequest request;
+    request.setAccountId(userId.toLongLong());
+    request.setPassword(password);
+    request.setIpAddr("127.0.0.1");
+    request.setUserAgent("HTS_Qt6");
 
-    // Mock 세션 생성
-    Session session;
-    session.sessionId = "mock_session_" + userId;
-    session.userId = userId;
-    session.userName = "User " + userId;
-    session.loginTime = QDateTime::currentDateTime();
-    session.expireTime = QDateTime::currentDateTime().addSecs(3600);
+    auto& networkMgr = GrpcNetworkManager::instance();
+    networkMgr.executeCallAsync<auth::LoginRequest, auth::LoginReply>(
+        networkMgr.authClient(),
+        request,
+        [](QAbstractGrpcClient* client, const auth::LoginRequest& req, const QGrpcCallOptions& opts) {
+            return static_cast<auth::AuthService::Client*>(client)->Login(req, opts);
+        },
+        context,
+        [callback](Result<auth::LoginReply> result) {
+            if (result.isError()) {
+                callback(Result<Session>::failure(result.error().code, result.error().message));
+                return;
+            }
 
-    return Result<Session>::success(std::move(session));
+            auto& reply = result.value();
+
+            if (reply.code() != auth::AuthResultGadget::AuthResult::SUCCESS) {
+                ErrorCode errorCode = ErrorCode::AuthenticationFailed;
+                QString msg = "Login failed";
+
+                switch (reply.code()) {
+                    case auth::AuthResultGadget::AuthResult::INVALID_CREDENTIALS:
+                        msg = "Invalid credentials";
+                        break;
+                    case auth::AuthResultGadget::AuthResult::ACCOUNT_NOT_FOUND:
+                        msg = "Account not found";
+                        break;
+                    case auth::AuthResultGadget::AuthResult::ACCOUNT_SUSPENDED:
+                        msg = "Account suspended";
+                        break;
+                    case auth::AuthResultGadget::AuthResult::ACCOUNT_LOCKED:
+                        msg = "Account locked";
+                        break;
+                    default:
+                        msg = "Authentication failed";
+                        break;
+                }
+
+                callback(Result<Session>::failure(errorCode, msg));
+                return;
+            }
+
+            Session session;
+            session.sessionId = reply.sessionId();
+            session.accountId = reply.accountId();
+            session.loginTime = QDateTime::currentDateTime();
+            session.expireTime = QDateTime::currentDateTime().addSecs(3600);
+
+            SessionManager::instance().setSession(session);
+            callback(Result<Session>::success(std::move(session)));
+        }
+    );
 }
 
-Result<void> AuthCommandService::logout() {
-    // TODO: gRPC 로그아웃 호출
-    return Result<void>::success();
+void AuthCommandService::logoutAsync(
+    QObject* context,
+    std::function<void(Result<void>)> callback
+) {
+    QString sessionId = SessionManager::instance().currentSessionId();
+    if (sessionId.isEmpty()) {
+        callback(Result<void>::failure(
+            ErrorCode::InvalidInput,
+            "No active session"
+        ));
+        return;
+    }
+
+    auth::LogoutRequest request;
+    request.setSessionId(sessionId);
+
+    auto& networkMgr = GrpcNetworkManager::instance();
+    networkMgr.executeCallAsync<auth::LogoutRequest, auth::LogoutReply>(
+        networkMgr.authClient(),
+        request,
+        [](QAbstractGrpcClient* client, const auth::LogoutRequest& req, const QGrpcCallOptions& opts) {
+            return static_cast<auth::AuthService::Client*>(client)->Logout(req, opts);
+        },
+        context,
+        [callback](Result<auth::LogoutReply> result) {
+            if (result.isError()) {
+                callback(Result<void>::failure(result.error().code, result.error().message));
+                return;
+            }
+
+            SessionManager::instance().clear();
+            callback(Result<void>::success());
+        }
+    );
 }

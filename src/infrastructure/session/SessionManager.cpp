@@ -16,6 +16,22 @@ std::optional<Session> SessionManager::currentSession() const {
     return session_;
 }
 
+QString SessionManager::currentSessionId() const {
+    QMutexLocker lock(&mutex_);
+    if (session_.has_value()) {
+        return session_->sessionId;
+    }
+    return QString();
+}
+
+qint64 SessionManager::currentAccountId() const {
+    QMutexLocker lock(&mutex_);
+    if (session_.has_value()) {
+        return session_->accountId;
+    }
+    return 0;
+}
+
 bool SessionManager::isLoggedIn() const {
     QMutexLocker lock(&mutex_);
     return session_.has_value() && session_->isValid();

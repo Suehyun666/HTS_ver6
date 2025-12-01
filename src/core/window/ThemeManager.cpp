@@ -95,6 +95,24 @@ void ThemeManager::loadSystemTheme() {
 
 void ThemeManager::applyTheme() {
     qApp->setStyleSheet(getStyleSheet());
+
+    // Set application palette for better dark mode support
+    QPalette palette;
+    palette.setColor(QPalette::Window, backgroundColor_);
+    palette.setColor(QPalette::WindowText, foregroundColor_);
+    palette.setColor(QPalette::Base, backgroundColor_);
+    palette.setColor(QPalette::AlternateBase, backgroundColor_.lighter(110));
+    palette.setColor(QPalette::ToolTipBase, backgroundColor_);
+    palette.setColor(QPalette::ToolTipText, foregroundColor_);
+    palette.setColor(QPalette::Text, foregroundColor_);
+    palette.setColor(QPalette::Button, buttonColor_);
+    palette.setColor(QPalette::ButtonText, foregroundColor_);
+    palette.setColor(QPalette::BrightText, Qt::red);
+    palette.setColor(QPalette::Link, accentColor_);
+    palette.setColor(QPalette::Highlight, accentColor_);
+    palette.setColor(QPalette::HighlightedText, Qt::white);
+
+    qApp->setPalette(palette);
 }
 
 QString ThemeManager::getStyleSheet() const {

@@ -23,6 +23,7 @@ private:
     QMdiArea* mdiArea;
 
     DomainWidget* createWidgetInstance(const QString& type);
+    QMdiSubWindow* addWidgetToMdi(QWidget* widget);
 };
 
 #endif

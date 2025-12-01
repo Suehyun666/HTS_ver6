@@ -17,82 +17,92 @@
 <context>
     <name>AccountView</name>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="29"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="33"/>
         <source>Account Summary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="46"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="53"/>
         <source>Account Number:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="48"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="55"/>
         <source>Total Assets:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="50"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="57"/>
         <source>Cash Balance:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="53"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="59"/>
+        <source>Cash Reserved:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="61"/>
+        <source>Cash Available:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/account/AccountView.cpp" line="64"/>
         <source>Stock Valuation:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="55"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="66"/>
         <source>Profit/Loss:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="57"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="68"/>
         <source>Profit Rate:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="62"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="73"/>
         <source>Holdings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="68"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="79"/>
         <source>Symbol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="69"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="80"/>
         <source>Quantity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="70"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="81"/>
         <source>Avg Price</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="71"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="82"/>
         <source>Current Price</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="72"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="83"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="73"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="84"/>
         <source>P/L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.cpp" line="74"/>
+        <location filename="../../src/ui/account/AccountView.cpp" line="85"/>
         <source>P/L %</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/account/AccountView.h" line="15"/>
+        <location filename="../../src/ui/account/AccountView.h" line="16"/>
         <source>Account</source>
         <translation type="unfinished">계좌</translation>
     </message>
@@ -116,19 +126,84 @@
 <context>
     <name>ChartWidget</name>
     <message>
-        <location filename="../../src/ui/chart/ChartWidget.cpp" line="25"/>
-        <source>Symbol:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/chart/ChartWidget.cpp" line="28"/>
-        <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/chart/ChartWidget.h" line="19"/>
+        <location filename="../../src/ui/chart/ChartWidget.h" line="23"/>
         <source>Chart</source>
         <translation type="unfinished">차트</translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="49"/>
+        <source>Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="52"/>
+        <source>↻</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="55"/>
+        <source>Refresh Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="64"/>
+        <source>1S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="64"/>
+        <source>1M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="64"/>
+        <source>1H</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="64"/>
+        <source>1D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="113"/>
+        <source>Horizontal Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="114"/>
+        <source>Vertical Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="115"/>
+        <source>Trend Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="117"/>
+        <source>Rectangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="118"/>
+        <source>Fibonacci Retracement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="120"/>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="121"/>
+        <source>Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/chart/ChartWidget.cpp" line="362"/>
+        <source>Data Load Error</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -218,50 +293,57 @@
     <name>LoginWindow</name>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="14"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="104"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="104"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="104"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="104"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="104"/>
         <source>HTS Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="47"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="105"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="105"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="105"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="105"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="105"/>
         <source>User ID:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="54"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="106"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="106"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="106"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="106"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="106"/>
         <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="64"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="107"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="107"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="107"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="107"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="107"/>
         <source>Enter your password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="71"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="108"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="108"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="108"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="108"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="108"/>
         <source>Enter your user ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="80"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="109"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="109"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="109"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="109"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="109"/>
         <source>QLabel { color: red; }</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="93"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="111"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_loginwindow.h" line="111"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="111"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="111"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="111"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
@@ -275,8 +357,9 @@
     <name>MainWindow</name>
     <message>
         <location filename="../../src/ui/window/mainwindow.ui" line="20"/>
-        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_mainwindow.h" line="52"/>
-        <location filename="../../build/windows-release/HTS_ver6_autogen/include_Release/ui_mainwindow.h" line="52"/>
+        <location filename="../../build/HTS_ver6_autogen/include/ui_mainwindow.h" line="52"/>
+        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_mainwindow.h" line="52"/>
+        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_mainwindow.h" line="52"/>
         <source>HTS Trading System</source>
         <translation>HTS 거래 시스템</translation>
     </message>
@@ -454,159 +537,115 @@
 <context>
     <name>OrderWidget</name>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="35"/>
-        <source>New Order</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="50"/>
-        <source>Market Price</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="51"/>
-        <source>Limit Price</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="54"/>
-        <source>Symbol:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="55"/>
-        <source>Order Type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="56"/>
-        <source>Price:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="57"/>
-        <source>Quantity:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="60"/>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="95"/>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="125"/>
-        <source>Buy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="61"/>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="95"/>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="143"/>
-        <source>Sell</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="71"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="119"/>
         <source>Open Orders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="48"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="126"/>
         <source>Symbol</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="53"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="126"/>
         <source>Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="89"/>
+        <source>BUY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="90"/>
+        <source>SELL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="126"/>
         <source>Side</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="127"/>
+        <source>Qty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="147"/>
+        <source>Cancel Selected Order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="182"/>
+        <source>Placing buy order...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="189"/>
+        <source>Placing sell order...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="207"/>
+        <source>Cancelling order...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="214"/>
+        <source>Order placed successfully: %1 %2 %3 @ $%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="226"/>
+        <source>Order #%1 cancelled successfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="232"/>
+        <source>Error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="74"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="127"/>
         <source>Price</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="67"/>
         <source>Quantity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="76"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="126"/>
+        <source>Order ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="127"/>
         <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="81"/>
-        <source>Cancel Selected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="94"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="57"/>
         <source>Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="94"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="56"/>
         <source>Market</source>
         <translation type="unfinished">시세</translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="128"/>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="146"/>
-        <source>Pending</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
-        <source>Filled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="96"/>
-        <source>Partial</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="130"/>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="148"/>
-        <source>Order Placed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="130"/>
-        <source>Buy order for %1 shares of %2 at $%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="148"/>
-        <source>Sell order for %1 shares of %2 at $%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="154"/>
-        <source>No Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="154"/>
+        <location filename="../../src/ui/order/OrderWidget.cpp" line="199"/>
         <source>Please select an order to cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="161"/>
-        <source>Order Cancelled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.cpp" line="161"/>
-        <source>Order has been cancelled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/ui/order/OrderWidget.h" line="18"/>
+        <location filename="../../src/ui/order/OrderWidget.h" line="22"/>
         <source>Order</source>
         <translation type="unfinished">주문</translation>
     </message>

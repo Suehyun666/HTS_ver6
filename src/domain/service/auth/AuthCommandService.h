@@ -1,15 +1,19 @@
 #pragma once
 #include "IAuthCommandService.h"
 
-// gRPC 클라이언트는 나중에 구현
-// 지금은 Mock으로
 class AuthCommandService : public IAuthCommandService {
 public:
     AuthCommandService() = default;
 
-    Result<Session> login(const QString& userId, const QString& password) override;
-    Result<void> logout() override;
+    void loginAsync(
+        const QString& userId,
+        const QString& password,
+        QObject* context,
+        std::function<void(Result<Session>)> callback
+    ) override;
 
-private:
-    // TODO: GrpcChannelPool에서 받아온 채널 저장
+    void logoutAsync(
+        QObject* context,
+        std::function<void(Result<void>)> callback
+    ) override;
 };

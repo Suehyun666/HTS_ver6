@@ -1,4 +1,5 @@
 #include "AccountView.h"
+#include "../../viewmodel/account/AccountViewModel.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGridLayout>
@@ -7,19 +8,22 @@
 #include <QTableWidget>
 #include <QHeaderView>
 #include <QRandomGenerator>
+#include <QDebug>
 
 AccountView::AccountView(QWidget* parent)
     : DomainWidget(parent)
+    , viewModel_(nullptr)
     , accountNumberLabel(nullptr)
     , totalAssetsLabel(nullptr)
     , cashBalanceLabel(nullptr)
+    , cashReservedLabel(nullptr)
+    , cashAvailableLabel(nullptr)
     , stockValueLabel(nullptr)
     , profitLossLabel(nullptr)
     , profitRateLabel(nullptr)
     , positionsTable(nullptr)
 {
     setupUI();
-    loadMockData();
 }
 
 void AccountView::setupUI() {
@@ -29,7 +33,7 @@ void AccountView::setupUI() {
     QGroupBox* summaryGroup = new QGroupBox(tr("Account Summary"));
     QGridLayout* summaryLayout = new QGridLayout(summaryGroup);
 
-    accountNumberLabel = new QLabel("123-456-7890");
+    accountNumberLabel = new QLabel("-");
     totalAssetsLabel = new QLabel("$0.00");
     cashBalanceLabel = new QLabel("$0.00");
     stockValueLabel = new QLabel("$0.00");
@@ -43,12 +47,19 @@ void AccountView::setupUI() {
     profitLossLabel->setFont(valueFont);
     profitRateLabel->setFont(valueFont);
 
+    cashReservedLabel = new QLabel("$0.00");
+    cashAvailableLabel = new QLabel("$0.00");
+
     summaryLayout->addWidget(new QLabel(tr("Account Number:")), 0, 0);
     summaryLayout->addWidget(accountNumberLabel, 0, 1);
     summaryLayout->addWidget(new QLabel(tr("Total Assets:")), 1, 0);
     summaryLayout->addWidget(totalAssetsLabel, 1, 1);
     summaryLayout->addWidget(new QLabel(tr("Cash Balance:")), 2, 0);
     summaryLayout->addWidget(cashBalanceLabel, 2, 1);
+    summaryLayout->addWidget(new QLabel(tr("Cash Reserved:")), 3, 0);
+    summaryLayout->addWidget(cashReservedLabel, 3, 1);
+    summaryLayout->addWidget(new QLabel(tr("Cash Available:")), 4, 0);
+    summaryLayout->addWidget(cashAvailableLabel, 4, 1);
 
     summaryLayout->addWidget(new QLabel(tr("Stock Valuation:")), 1, 2);
     summaryLayout->addWidget(stockValueLabel, 1, 3);
@@ -82,51 +93,79 @@ void AccountView::setupUI() {
     mainLayout->addWidget(positionsGroup);
 }
 
-void AccountView::loadMockData() {
-    double cashBalance = 50000.0 + QRandomGenerator::global()->bounded(50000);
-    double stockValue = 0.0;
-    double totalPL = 0.0;
-
-    QStringList symbols = {"AAPL", "GOOGL", "MSFT", "TSLA", "AMZN", "META", "NVDA", "AMD"};
-
-    for (int i = 0; i < 6; ++i) {
-        int row = positionsTable->rowCount();
-        positionsTable->insertRow(row);
-
-        QString symbol = symbols[i];
-        int quantity = (QRandomGenerator::global()->bounded(20) + 1) * 10;
-        double avgPrice = 50.0 + QRandomGenerator::global()->bounded(200);
-        double currentPrice = avgPrice + (QRandomGenerator::global()->bounded(1000) / 1000.0 - 0.5) * 30;
-        double value = quantity * currentPrice;
-        double pl = (currentPrice - avgPrice) * quantity;
-        double plPercent = ((currentPrice - avgPrice) / avgPrice) * 100;
-
-        stockValue += value;
-        totalPL += pl;
-
-        positionsTable->setItem(row, 0, new QTableWidgetItem(symbol));
-        positionsTable->setItem(row, 1, new QTableWidgetItem(QString::number(quantity)));
-        positionsTable->setItem(row, 2, new QTableWidgetItem(QString("$%1").arg(avgPrice, 0, 'f', 2)));
-        positionsTable->setItem(row, 3, new QTableWidgetItem(QString("$%1").arg(currentPrice, 0, 'f', 2)));
-        positionsTable->setItem(row, 4, new QTableWidgetItem(QString("$%1").arg(value, 0, 'f', 2)));
-
-        QTableWidgetItem* plItem = new QTableWidgetItem(QString("$%1").arg(pl, 0, 'f', 2));
-        plItem->setForeground(pl >= 0 ? Qt::darkGreen : Qt::red);
-        positionsTable->setItem(row, 5, plItem);
-
-        QTableWidgetItem* plPercentItem = new QTableWidgetItem(QString("%1%").arg(plPercent, 0, 'f', 2));
-        plPercentItem->setForeground(plPercent >= 0 ? Qt::darkGreen : Qt::red);
-        positionsTable->setItem(row, 6, plPercentItem);
+void AccountView::setViewModel(AccountViewModel* viewModel) {
+    if (viewModel_ == viewModel) {
+        qDebug() << "[AccountView] setViewModel called but same viewModel, skipping";
+        return;
     }
 
-    double totalAssets = cashBalance + stockValue;
-    double profitRate = (totalPL / (totalAssets - totalPL)) * 100;
+    if (viewModel_) {
+        disconnect(viewModel_, nullptr, this, nullptr);
+    }
 
-    cashBalanceLabel->setText(QString("$%1").arg(cashBalance, 0, 'f', 2));
-    stockValueLabel->setText(QString("$%1").arg(stockValue, 0, 'f', 2));
-    totalAssetsLabel->setText(QString("$%1").arg(totalAssets, 0, 'f', 2));
-    profitLossLabel->setText(QString("$%1").arg(totalPL, 0, 'f', 2));
-    profitLossLabel->setStyleSheet(totalPL >= 0 ? "color: green;" : "color: red;");
-    profitRateLabel->setText(QString("%1%").arg(profitRate, 0, 'f', 2));
-    profitRateLabel->setStyleSheet(profitRate >= 0 ? "color: green;" : "color: red;");
+    viewModel_ = viewModel;
+
+    if (viewModel_) {
+        qDebug() << "[AccountView] Setting ViewModel - accountId:" << viewModel_->accountId()
+                 << "balance:" << viewModel_->cashBalance()
+                 << "reserved:" << viewModel_->cashReserved();
+
+        connectViewModel();
+
+        // Update UI with current values
+        accountNumberLabel->setText(QString::number(viewModel_->accountId()));
+        onBalanceChanged(viewModel_->cashBalance());
+        onReservedChanged(viewModel_->cashReserved());
+        onAvailableChanged(viewModel_->cashAvailable());
+    } else {
+        qWarning() << "[AccountView] setViewModel called with null viewModel!";
+    }
+}
+
+void AccountView::connectViewModel() {
+    if (!viewModel_) {
+        qWarning() << "[AccountView::connectViewModel] viewModel is null!";
+        return;
+    }
+
+    qDebug() << "[AccountView::connectViewModel] Connecting signals for accountId:" << viewModel_->accountId();
+
+    bool connected1 = connect(viewModel_, &AccountViewModel::balanceChanged, this, &AccountView::onBalanceChanged);
+    bool connected2 = connect(viewModel_, &AccountViewModel::reservedChanged, this, &AccountView::onReservedChanged);
+    bool connected3 = connect(viewModel_, &AccountViewModel::availableChanged, this, &AccountView::onAvailableChanged);
+
+    qDebug() << "[AccountView::connectViewModel] Connection results - balance:" << connected1
+             << "reserved:" << connected2 << "available:" << connected3;
+}
+
+void AccountView::onBalanceChanged(double newBalance) {
+    qDebug() << "[AccountView::onBalanceChanged] Called with:" << newBalance;
+    QString formattedText = formatCurrency(newBalance);
+    cashBalanceLabel->setText(formattedText);
+    qDebug() << "[AccountView::onBalanceChanged] Label text set to:" << formattedText;
+    cashBalanceLabel->update();
+}
+
+void AccountView::onReservedChanged(double newReserved) {
+    qDebug() << "[AccountView::onReservedChanged] Called with:" << newReserved;
+    QString formattedText = formatCurrency(newReserved);
+    cashReservedLabel->setText(formattedText);
+    qDebug() << "[AccountView::onReservedChanged] Label text set to:" << formattedText;
+    cashReservedLabel->update();
+}
+
+void AccountView::onAvailableChanged(double newAvailable) {
+    qDebug() << "[AccountView::onAvailableChanged] Called with:" << newAvailable;
+    QString formattedText = formatCurrency(newAvailable);
+    cashAvailableLabel->setText(formattedText);
+    qDebug() << "[AccountView::onAvailableChanged] Label text set to:" << formattedText;
+
+    QFont font = cashAvailableLabel->font();
+    font.setBold(true);
+    cashAvailableLabel->setFont(font);
+    cashAvailableLabel->update();
+}
+
+QString AccountView::formatCurrency(double amount) const {
+    return QString("$%1").arg(amount, 0, 'f', 2);
 }

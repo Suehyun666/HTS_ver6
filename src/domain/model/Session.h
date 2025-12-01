@@ -4,8 +4,7 @@
 
 struct Session {
     QString sessionId;
-    QString userId;
-    QString userName;
+    qint64 accountId;
     QDateTime loginTime;
     QDateTime expireTime;
 

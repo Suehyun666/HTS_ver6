@@ -3,14 +3,20 @@
 #include "../window/ThemeManager.h"
 #include "../../infrastructure/config/Config.h"
 #include "../../infrastructure/network/NetworkExecutor.h"
+#include "../../infrastructure/network/GrpcChannelPool.h"
+#include "../../infrastructure/network/GrpcNetworkManager.h"
 #include "../../infrastructure/session/SessionManager.h"
+#include "../../infrastructure/database/OHLCVRepository.h"
 #include "../../infrastructure/config/translate/TranslationManager.h"
+#include "../../infrastructure/streaming/StreamingClient.h"
 #include "../../domain/service/auth/AuthCommandService.h"
 #include "../../viewmodel/auth/LoginViewModel.h"
+#include "../../viewmodel/account/AccountManager.h"
 #include "../../ui/window/MainWindow.h"
 #include "../../ui/auth/LoginWindow.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <QTimer>
 
 Application::Application(int& argc, char** argv)
     : app(argc, argv)
@@ -103,8 +109,16 @@ int Application::run() {
 void Application::shutdown() {
     qDebug() << "[Application] Starting shutdown sequence...";
 
+    shouldReconnect = false;
+
+    if (streamingClient) {
+        streamingClient->disconnect();
+    }
+
     rollbackNetwork();
     rollbackInfrastructure();
+
+    AccountManager::destroy();
 
     qDebug() << "[Application] Shutdown complete";
 }
@@ -117,6 +131,11 @@ Result<void> Application::loadConfig() {
 }
 
 Result<void> Application::initializeInfrastructure() {
+    if (!OHLCVRepository::instance().initialize()) {
+        return Result<void>::failure(ErrorCode::ConfigLoadFailed, "OHLCV database initialization failed");
+    }
+    qDebug() << "[Application] OHLCV database initialized";
+
     infrastructureInitialized = true;
     return Result<void>::success();
 }
@@ -131,14 +150,41 @@ Result<void> Application::initializeMemoryPools() {
 Result<void> Application::initializeNetwork() {
     auto& config = Config::instance();
 
-    // NetworkExecutor 초기화
     auto result = NetworkExecutor::instance().initialize(config.networkThreads());
     if (result.isError()) {
         return result;
     }
 
-    // TODO: GrpcChannelPool 초기화
-    // TODO: StreamClient 초기화 (로그인 후에 연결)
+    auto poolResult = GrpcChannelPool::instance().initialize("localhost", 50051);
+    if (poolResult.isError()) {
+        NetworkExecutor::instance().shutdown();
+        return poolResult;
+    }
+
+    RetryPolicy retryPolicy;
+    retryPolicy.maxRetries = 3;
+    retryPolicy.initialBackoffMs = 100;
+    retryPolicy.maxBackoffMs = 5000;
+    retryPolicy.backoffMultiplier = 2.0;
+    GrpcChannelPool::instance().setRetryPolicy(retryPolicy);
+
+    TimeoutConfig timeoutConfig;
+    timeoutConfig.connectTimeoutMs = 5000;
+    timeoutConfig.requestTimeoutMs = 10000;
+    GrpcChannelPool::instance().setTimeoutConfig(timeoutConfig);
+
+    auto networkMgrResult = GrpcNetworkManager::instance().initialize();
+    if (networkMgrResult.isError()) {
+        GrpcChannelPool::instance().shutdown();
+        NetworkExecutor::instance().shutdown();
+        return networkMgrResult;
+    }
+
+    // Initialize OHLCV database
+    bool dbInitSuccess = OHLCVRepository::instance().initialize();
+    if (!dbInitSuccess) {
+        qWarning() << "[Database] Failed to initialize OHLCV database, continuing anyway...";
+    }
 
     networkInitialized = true;
     return Result<void>::success();
@@ -158,24 +204,92 @@ Result<void> Application::initializeViews() {
 }
 
 void Application::onLoginSucceeded() {
-    qDebug() << "[Application] Login succeeded, transitioning to main window";
+    qDebug() << "[Application] Login succeeded, connecting to streaming server...";
 
-    mainWindow = new MainWindow(nullptr);
-    mainWindow->setAttribute(Qt::WA_DeleteOnClose);
-    mainWindow->setWindowTitle(AppConstants::APP_NAME);
-    mainWindow->resize(AppConstants::MAIN_WINDOW_WIDTH,
-                        AppConstants::MAIN_WINDOW_HEIGHT);
-    mainWindow->show();
+    // Connect to streaming server FIRST before showing main window
+    streamingClient = new StreamingClient(&app);
 
-    if (loginWindow) {
-        loginWindow->close();
-        loginWindow->deleteLater();
-        loginWindow = nullptr;
-    }
+    // Initialize AccountManager singleton to handle account data
+    AccountManager::initialize(streamingClient);
 
-    qDebug() << "[Application] Main window displayed, login window deleted";
+    QObject::connect(streamingClient, &StreamingClient::connected, [this]() {
+        qDebug() << "[Application] StreamingClient connected, authenticating...";
+        QString sessionId = SessionManager::instance().currentSessionId();
+        streamingClient->authenticate(sessionId);
+    });
 
-    // TODO: StreamClient 연결 시작
+    QObject::connect(streamingClient, &StreamingClient::authenticated,
+                    [this](qint64 userId, QList<qint64> accountIds) {
+        qDebug() << "[Application] StreamingClient authenticated. userId:" << userId
+                 << "accounts:" << accountIds;
+
+        // Only NOW show the main window after successful streaming connection
+        mainWindow = new MainWindow(nullptr);
+        mainWindow->setAttribute(Qt::WA_DeleteOnClose);
+        mainWindow->setWindowTitle(AppConstants::APP_NAME);
+        mainWindow->resize(AppConstants::MAIN_WINDOW_WIDTH,
+                            AppConstants::MAIN_WINDOW_HEIGHT);
+        mainWindow->show();
+
+        if (loginWindow) {
+            loginWindow->close();
+            loginWindow->deleteLater();
+            loginWindow = nullptr;
+        }
+
+        qDebug() << "[Application] Main window displayed, login window deleted";
+    });
+
+    QObject::connect(streamingClient, &StreamingClient::authenticationFailed,
+                    [this](const QString& reason) {
+        qCritical() << "[Application] StreamingClient auth failed:" << reason;
+
+        int ret = QMessageBox::critical(nullptr, "Authentication Failed",
+                              "Streaming server authentication failed: " + reason +
+                              "\n\nWould you like to retry?",
+                              QMessageBox::Retry | QMessageBox::Close);
+
+        if (ret == QMessageBox::Retry) {
+            qDebug() << "[Application] Retrying streaming connection...";
+            QTimer::singleShot(2000, [this]() {
+                QString wsUrl = "ws://localhost:9050/ws";
+                streamingClient->connectToServer(wsUrl);
+            });
+        } else {
+            app.quit();
+        }
+    });
+
+    QObject::connect(streamingClient, &StreamingClient::disconnected,
+                    [this]() {
+        qWarning() << "[Application] StreamingClient disconnected";
+
+        if (!shouldReconnect) {
+            qDebug() << "[Application] Reconnection disabled, not attempting to reconnect";
+            return;
+        }
+
+        qDebug() << "[Application] Attempting reconnect in 3 seconds...";
+        QTimer::singleShot(3000, [this]() {
+            if (streamingClient && shouldReconnect) {
+                qDebug() << "[Application] Reconnecting to streaming server...";
+                QString wsUrl = "ws://localhost:9050/ws";
+                streamingClient->connectToServer(wsUrl);
+            }
+        });
+    });
+
+    QObject::connect(streamingClient, &StreamingClient::errorOccurred,
+                    [this](const QString& error) {
+        qCritical() << "[Application] StreamingClient error:" << error;
+
+        // Don't quit immediately on error, let reconnection logic handle it
+        qDebug() << "[Application] Streaming error occurred, waiting for reconnection...";
+    });
+
+    QString wsUrl = "ws://localhost:9050/ws";
+    qDebug() << "[Application] Connecting to streaming server:" << wsUrl;
+    streamingClient->connectToServer(wsUrl);
 }
 
 void Application::rollbackInfrastructure() {
@@ -188,9 +302,9 @@ void Application::rollbackInfrastructure() {
 
 void Application::rollbackNetwork() {
     if (networkInitialized) {
+        GrpcNetworkManager::instance().shutdown();
+        GrpcChannelPool::instance().shutdown();
         NetworkExecutor::instance().shutdown();
-        // TODO: GrpcChannelPool shutdown
-        // TODO: StreamClient shutdown
         networkInitialized = false;
         qDebug() << "[Application] Network rollback complete";
     }

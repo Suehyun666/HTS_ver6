@@ -1,13 +1,20 @@
-//
-// Created by suehyun on 11/22/25.
-//
+#pragma once
+#include "IOrderCommandService.h"
 
-#ifndef HTS_VER6_ORDERCOMMANDSERVICE_H
-#define HTS_VER6_ORDERCOMMANDSERVICE_H
+class OrderCommandService : public IOrderCommandService {
+public:
+    OrderCommandService() = default;
 
+    void placeOrderAsync(
+        const PlaceOrderParams& params,
+        QObject* context,
+        std::function<void(Result<OrderResult>)> callback
+    ) override;
 
-class OrderCommandService {
+    void cancelOrderAsync(
+        const QString& symbol,
+        int64_t orderId,
+        QObject* context,
+        std::function<void(Result<OrderResult>)> callback
+    ) override;
 };
-
-
-#endif //HTS_VER6_ORDERCOMMANDSERVICE_H

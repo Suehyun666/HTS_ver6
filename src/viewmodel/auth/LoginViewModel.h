@@ -38,7 +38,7 @@ private:
     void setBusy(bool busy);
     void setErrorMessage(const QString& msg);
 
-    std::unique_ptr<IAuthCommandService> authService_;
+    std::unique_ptr<IAuthCommandService> authService;
     QString userId_;
     QString password_;
     bool busy_ = false;

@@ -10,9 +10,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${CMAKE_BINARY_DIR}/generated)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Qml Multimedia PrintSupport)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Qml Multimedia PrintSupport)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools Qml Multimedia PrintSupport Grpc Protobuf Sql WebSockets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools Qml Multimedia PrintSupport Grpc Protobuf Sql WebSockets)
 
 set(TS_FILES
         resources/i18n/common_ko_KR.ts
@@ -42,12 +43,15 @@ set(CORE_SOURCES
         src/core/window/MenuBarManager.cpp
         src/core/notification/NotificationManager.h
         src/core/notification/NotificationManager.cpp
+        src/core/factory/ViewModelFactory.h
+        src/core/factory/ViewModelFactory.cpp
 )
 
 set(DOMAIN_SOURCES
         src/domain/model/Session.h
         src/domain/model/AccountSnapshot.h
         src/domain/model/MarketTick.h
+        src/domain/model/OHLCV.h
 )
 
 set(INFRASTRUCTURE_SOURCES
@@ -57,12 +61,20 @@ set(INFRASTRUCTURE_SOURCES
         src/infrastructure/config/translate/TranslationManager.cpp
         src/infrastructure/network/NetworkExecutor.h
         src/infrastructure/network/NetworkExecutor.cpp
+        src/infrastructure/network/GrpcChannelPool.h
+        src/infrastructure/network/GrpcChannelPool.cpp
+        src/infrastructure/network/GrpcNetworkManager.h
+        src/infrastructure/network/GrpcNetworkManager.cpp
         src/infrastructure/session/SessionManager.h
         src/infrastructure/session/SessionManager.cpp
         src/infrastructure/repository/DataBase.cpp
         src/infrastructure/repository/DataBase.h
         src/infrastructure/cache/InMemoryCache.cpp
         src/infrastructure/cache/InMemoryCache.h
+        src/infrastructure/database/OHLCVRepository.h
+        src/infrastructure/database/OHLCVRepository.cpp
+        src/infrastructure/streaming/StreamingClient.h
+        src/infrastructure/streaming/StreamingClient.cpp
 )
 
 set(APPLICATION_SOURCES
@@ -78,6 +90,9 @@ set(APPLICATION_SOURCES
         src/domain/service/order/IOrderCommandService.h
         src/domain/service/order/OrderCommandService.cpp
         src/domain/service/order/OrderCommandService.h
+        src/domain/service/chart/IChartDataService.h
+        src/domain/service/chart/ChartDataService.h
+        src/domain/service/chart/ChartDataService.cpp
 )
 
 set(VIEWMODEL_SOURCES
@@ -87,8 +102,16 @@ set(VIEWMODEL_SOURCES
         src/viewmodel/account/PositionViewModel.h
         src/viewmodel/account/BalanceViewModel.cpp
         src/viewmodel/account/BalanceViewModel.h
+        src/viewmodel/account/AccountViewModel.h
+        src/viewmodel/account/AccountViewModel.cpp
+        src/viewmodel/account/AccountManager.h
+        src/viewmodel/account/AccountManager.cpp
         src/viewmodel/order/OrderHistoryViewModel.cpp
         src/viewmodel/order/OrderHistoryViewModel.h
+        src/viewmodel/order/OrderViewModel.h
+        src/viewmodel/order/OrderViewModel.cpp
+        src/viewmodel/chart/ChartViewModel.h
+        src/viewmodel/chart/ChartViewModel.cpp
 )
 
 set(UI_SOURCES
@@ -144,6 +167,17 @@ set(UI_FILES
         src/ui/auth/loginwindow.ui
 )
 
+set(PROTO_FILES
+        resources/proto/auth_api.proto
+        resources/proto/order_api.proto
+        resources/proto/order_commons.proto
+)
+
+set(GRPC_PROTO_FILES
+        resources/proto/auth_api.proto
+        resources/proto/order_api.proto
+)
+
 set(PROJECT_SOURCES
         src/main.cpp
         ${CORE_SOURCES}
@@ -183,6 +217,16 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             resources.qrc
             ${QM_FILES}
         )
+
+    qt_add_protobuf(HTS_ver6
+            PROTO_FILES ${PROTO_FILES}
+            OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/generated
+    )
+
+    qt_add_grpc(HTS_ver6 CLIENT
+            PROTO_FILES ${GRPC_PROTO_FILES}
+            OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/generated
+    )
 else()
     if(ANDROID)
         add_library(HTS_ver6 SHARED
@@ -201,7 +245,15 @@ else()
     qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-target_link_libraries(HTS_ver6 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Qml Qt${QT_VERSION_MAJOR}::Multimedia Qt${QT_VERSION_MAJOR}::PrintSupport)
+target_link_libraries(HTS_ver6 PRIVATE
+        Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Qml
+        Qt${QT_VERSION_MAJOR}::Multimedia
+        Qt${QT_VERSION_MAJOR}::PrintSupport
+        Qt${QT_VERSION_MAJOR}::Grpc
+        Qt${QT_VERSION_MAJOR}::Sql
+        Qt${QT_VERSION_MAJOR}::Protobuf
+        Qt${QT_VERSION_MAJOR}::WebSockets)
 
 # Windows-specific settings
 if(WIN32)

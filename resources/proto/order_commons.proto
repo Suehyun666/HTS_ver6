@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package order;
+
+option java_multiple_files = true;
+option java_package = "com.hts.generated.grpc";
+option java_outer_classname = "OrderCommons";
+
+enum OrderType {
+  MARKET = 0;
+  LIMIT = 1;
+}
+
+// 주문 방향
+enum Side {
+  SIDE_UNKNOWN = 0;
+  BUY = 1;   // CoinTossX: 1
+  SELL = 2;  // CoinTossX: 2
+}
+
+enum TimeInForce {
+  DAY = 0;
+  GTC = 1;  // Good Till Cancel
+  IOC = 2;  // Immediate or Cancel
+  FOK = 3;  // Fill or Kill
+}
+
+// === Value Objects ===
+
+message OrderId {
+  string value = 1;
+}
+
+message SecurityId {
+  int32 value = 1;
+}
+
+message Price {
+  int64 micro_units = 1;  // 1,000,000 = 1.0
+}
+
+message Quantity {
+  int64 value = 1;
+}
+
+// === Complex Types ===
+
+// 여러 가격대 체결 그룹
+message FillGroup {
+  int64 price_micro_units = 1;  // 1,000,000 = 1.0
+  int64 quantity = 2;
+}
+
+// 주문 상태 (Order Service 내부 상태)
+enum OrderStatus {
+  RECEIVED = 0;        // 접수됨
+  ACCEPTED = 1;        // 승인됨
+  SENT = 2;            // 게이트웨이로 전송됨
+  PARTIALLY_FILLED = 3; // 부분 체결
+  FILLED = 4;          // 전체 체결
+  CANCEL_REQUESTED = 5; // 취소 요청됨
+  CANCELED = 6;        // 취소됨
+  REJECTED = 7;        // 거부됨
+}

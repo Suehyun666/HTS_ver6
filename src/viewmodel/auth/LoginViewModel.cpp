@@ -5,7 +5,7 @@
 
 LoginViewModel::LoginViewModel(std::unique_ptr<IAuthCommandService> authService, QObject* parent)
     : QObject(parent)
-    , authService_(std::move(authService))
+    , authService(std::move(authService))
 {
 }
 
@@ -48,23 +48,15 @@ void LoginViewModel::loginCommand() {
     auto userId = userId_;
     auto password = password_;
 
-    // 비동기 실행 (UI 블로킹 방지)
-    NetworkExecutor::instance().execute([this, userId, password]() {
-        auto result = authService_->login(userId, password);
+    authService->loginAsync(userId, password, this, [this](Result<Session> result) {
+        setBusy(false);
 
-        // UI 쓰레드로 결과 전달
-        QMetaObject::invokeMethod(this, [this, result]() {
-            setBusy(false);
+        if (result.isError()) {
+            setErrorMessage(result.error().message);
+            emit loginFailed(result.error().message);
+            return;
+        }
 
-            if (result.isError()) {
-                setErrorMessage(result.error().message);
-                emit loginFailed(result.error().message);
-                return;
-            }
-
-            // 세션 저장
-            SessionManager::instance().setSession(result.value());
-            emit loginSucceeded();
-        }, Qt::QueuedConnection);
+        emit loginSucceeded();
     });
 }
