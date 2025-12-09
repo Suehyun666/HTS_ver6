@@ -293,57 +293,43 @@
     <name>LoginWindow</name>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="14"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="104"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="104"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="104"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="104"/>
         <source>HTS Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="47"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="105"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="105"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="105"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="105"/>
         <source>User ID:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="54"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="106"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="106"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="106"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="106"/>
         <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="64"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="107"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="107"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="107"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="107"/>
         <source>Enter your password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="71"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="108"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="108"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="108"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="108"/>
         <source>Enter your user ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="80"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="109"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="109"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="109"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="109"/>
         <source>QLabel { color: red; }</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ui/auth/loginwindow.ui" line="93"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_loginwindow.h" line="111"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_loginwindow.h" line="111"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_loginwindow.h" line="111"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_loginwindow.h" line="111"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
@@ -357,9 +343,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../../src/ui/window/mainwindow.ui" line="20"/>
-        <location filename="../../build/HTS_ver6_autogen/include/ui_mainwindow.h" line="52"/>
-        <location filename="../../build/linux-debug/HTS_ver6_autogen/include/ui_mainwindow.h" line="52"/>
-        <location filename="../../build/linux-release/HTS_ver6_autogen/include/ui_mainwindow.h" line="52"/>
+        <location filename="../../build/windows-debug/HTS_ver6_autogen/include_Debug/ui_mainwindow.h" line="52"/>
         <source>HTS Trading System</source>
         <translation>HTS 거래 시스템</translation>
     </message>
